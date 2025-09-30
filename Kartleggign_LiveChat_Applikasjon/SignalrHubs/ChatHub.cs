@@ -1,0 +1,48 @@
+using Kartleggign_LiveChat_Applikasjon.Models;
+using Microsoft.AspNetCore.SignalR;
+
+namespace Kartleggign_LiveChat_Applikasjon.SignalrHubs;
+
+public class ChatHub(
+    ChannelRepository channelRepository,
+    UserRepository userRepository,
+    UserChannelRelationshipRepository userChannelRelationshipRepository,
+    ILogger<ChatHub> logger
+    ): Hub
+{
+    
+    
+    public async Task JoinChannel(string channelName, string userName)
+    {
+        if (!channelRepository.Contains(channelName)) throw new HubException("Channel not found");
+        if (!userRepository.Contains(userName)) throw new HubException("User not found");
+        userChannelRelationshipRepository.AddUserChannelRelationship(userName, channelName);
+        logger.LogInformation($"User {userName} has joined the channel {channelName}");
+        await Groups.AddToGroupAsync(Context.ConnectionId, channelName);
+    }
+
+    public async Task CreateChannel(string channelName, string userName)
+    {
+        if (channelRepository.Contains(channelName)) throw new HubException("Channel not found");
+        if (userRepository.Contains(userName)) throw new HubException("User not found");
+        userChannelRelationshipRepository.AddUserChannelRelationship(userName, channelName);
+        logger.LogInformation($"User {userName} has created the channel {channelName}");
+        await Groups.AddToGroupAsync(Context.ConnectionId, channelName);
+    }
+
+    public async Task LeaveChannel(string channelName, string userName)
+    {
+        if (!userRepository.Contains(userName)) throw new HubException("User not found");
+        if (!userChannelRelationshipRepository.ChannelContainsUser(channelName, userName)) throw new HubException("Channel not found");
+        userChannelRelationshipRepository.RemoveUserChannelRelationship(userName, channelName);
+        logger.LogInformation($"User {userName} has left the channel {channelName}");
+        await  Groups.RemoveFromGroupAsync(Context.ConnectionId, channelName);
+    }
+
+    public async Task SendMessageToChannel(string channel, string userName, string message)
+    {
+        if (!userChannelRelationshipRepository.ChannelContainsUser(channel, userName)) throw new HubException("User not found in channel");
+        logger.LogInformation($"User {userName} has sent the message {message} to the channel {channel}");
+        await Clients.OthersInGroup(channel).SendAsync("ReceiveMessage", channel, userName, message);
+    }
+}

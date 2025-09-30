@@ -1,0 +1,7 @@
+﻿services:
+  kartleggign_livechat_applikasjon:
+    image: kartleggign_livechat_applikasjon
+    build:
+      context: .
+      dockerfile: Kartleggign_LiveChat_Applikasjon/Dockerfile
+

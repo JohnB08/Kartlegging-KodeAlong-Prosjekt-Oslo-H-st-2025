@@ -1,0 +1,410 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0" version="28.2.5" pages="8">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="grov skisse">
+    <mxGraphModel dx="1019" dy="622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-1" value="Channels" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="40" y="10" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-2" value="Users" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="40" y="120" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-3" value="User Joins Channel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="160" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-4" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="219.67" y="100" as="sourcePoint" />
+            <mxPoint x="220" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-5" value="eksistere channel i channels?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="145" y="160" width="150" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-6" value="Gi bedskjed til bruker, at channel ikke eksisterer." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="400" y="195" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-7" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.025;entryY=0.589;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="295" y="224.67" as="sourcePoint" />
+            <mxPoint x="397" y="225.01000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-8" value="Nei" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3oUfDyNqFSqGQM5KWP2C-7">
+          <mxGeometry x="0.3986" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3oUfDyNqFSqGQM5KWP2C-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="380" as="sourcePoint" />
+            <mxPoint x="220" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-10" value="Ja" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3oUfDyNqFSqGQM5KWP2C-9">
+          <mxGeometry x="0.2857" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-11" value="Er brukernavn allerede tatt i Channel?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="150" y="360" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-12" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="430" as="sourcePoint" />
+            <mxPoint x="400" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-14" value="Ja" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3oUfDyNqFSqGQM5KWP2C-12">
+          <mxGeometry x="0.0485" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-13" value="Gi bedskjed til bruker, at navnet er tatt i denne kanalen." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="400" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-15" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="219.67" y="500" as="sourcePoint" />
+            <mxPoint x="220" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-16" value="knytt bruker til channel." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="160" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-17" value="User Leaves Channel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="560" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-18" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="619.67" y="100" as="sourcePoint" />
+            <mxPoint x="619.67" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-19" value="Eksisterer channel i channels?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="550" y="170" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-20" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="230" as="sourcePoint" />
+            <mxPoint x="790" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-22" value="Nei" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3oUfDyNqFSqGQM5KWP2C-20">
+          <mxGeometry x="-0.6833" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-21" value="Gi bedskjed at channel ikke eksisterer i Channels" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="730" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-23" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="290" as="sourcePoint" />
+            <mxPoint x="620" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-24" value="Er brukernavnet tilknyttet channel?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="545" y="320" width="150" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-25" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-26">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="695" y="390" as="sourcePoint" />
+            <mxPoint x="760" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-29" value="nei" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3oUfDyNqFSqGQM5KWP2C-25">
+          <mxGeometry x="-0.2296" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-26" value="Gi bedskjed til bruker, at de ikke er knyttet til channel." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="740" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-30" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="460" as="sourcePoint" />
+            <mxPoint x="620" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-33" value="&lt;div&gt;Ja&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3oUfDyNqFSqGQM5KWP2C-30">
+          <mxGeometry x="-0.6615" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-31" value="Fjern tilknytting mellom bruker og channel." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="560" y="525" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-34" value="Bruker sender en melding til en channel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="960" y="40" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-35" value="Eksisterer channel i channels?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="952.5" y="160" width="135" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-38" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1020" y="90" as="sourcePoint" />
+            <mxPoint x="1070" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-39" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-40">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1087.5" y="224.67" as="sourcePoint" />
+            <mxPoint x="1180" y="224.67" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-40" value="Gi bedskjed at channel ikke finnes." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1120" y="194.66999999999996" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-42" value="Er brukernavnet tilknyttet channel?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="947.5" y="350" width="140" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-43" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1020" y="290" as="sourcePoint" />
+            <mxPoint x="1020" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-44" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-46">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1087.5" y="415" as="sourcePoint" />
+            <mxPoint x="1152.5" y="415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-45" value="nei" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3oUfDyNqFSqGQM5KWP2C-44">
+          <mxGeometry x="-0.2296" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-46" value="Gi bedskjed til bruker, at de ikke er knyttet til channel." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1132.5" y="385" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-47" value="Er meldingen tom?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="960" y="520" width="120" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-48" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1080" y="585" as="sourcePoint" />
+            <mxPoint x="1130" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-50" value="ja" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3oUfDyNqFSqGQM5KWP2C-48">
+          <mxGeometry x="-0.1867" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-49" value="Kunne ikke sende melding, melding er tom" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1130" y="555" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-51" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1020" y="480" as="sourcePoint" />
+            <mxPoint x="1070" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-52" value="&lt;div&gt;ja&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3oUfDyNqFSqGQM5KWP2C-51">
+          <mxGeometry x="0.04" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-53" value="send melding til alle utenom bruker.&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="957.5" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-54" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-53">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1019.69" y="645" as="sourcePoint" />
+            <mxPoint x="1019.6699999999998" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3oUfDyNqFSqGQM5KWP2C-55" target="3oUfDyNqFSqGQM5KWP2C-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-55" value="lage ny channel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1320" y="35" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-56" value="Eksisterer channel i channels?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1310" y="165" width="135" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-57" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="3oUfDyNqFSqGQM5KWP2C-58">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1445" y="229.66999999999996" as="sourcePoint" />
+            <mxPoint x="1537.5" y="229.66999999999996" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-58" value="Gi bedskjed at channel ikke finnes." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1477.5" y="199.66999999999996" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-60" value="gi bedskjed at channel er opprettet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1325" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3oUfDyNqFSqGQM5KWP2C-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.438;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3oUfDyNqFSqGQM5KWP2C-56" target="3oUfDyNqFSqGQM5KWP2C-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="xVZnISn7AvzGw98ddIi1" name="full flow join channel">
+    <mxGraphModel dx="1097" dy="670" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-3" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="vgiXF06qbJuiWbsoq9dZ-4" target="vgiXF06qbJuiWbsoq9dZ-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-4" value="Skriver inn channelname i chat-room input box" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="160" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.405;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="vgiXF06qbJuiWbsoq9dZ-3" target="vgiXF06qbJuiWbsoq9dZ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="vgiXF06qbJuiWbsoq9dZ-6" target="vgiXF06qbJuiWbsoq9dZ-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-6" value="trykker på join room knapp" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="275" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-8" value="&#39;Front-End" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="10" width="520" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-8" source="vgiXF06qbJuiWbsoq9dZ-10" target="vgiXF06qbJuiWbsoq9dZ-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-10" value="Har vi et brukernavn aktivt?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-8">
+          <mxGeometry x="130" y="350" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-8" source="vgiXF06qbJuiWbsoq9dZ-11" target="vgiXF06qbJuiWbsoq9dZ-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-11" value="diaply error ved brukernavn input box, at brukernavn mangler" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-8">
+          <mxGeometry x="240" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-12" value="join request avbrytes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-8">
+          <mxGeometry x="390" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-16" value="send brukernavn og channel navn som en join request til backend" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-8">
+          <mxGeometry x="110" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.448;entryY=0.026;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-8" source="vgiXF06qbJuiWbsoq9dZ-10" target="vgiXF06qbJuiWbsoq9dZ-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-17" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="560" width="520" height="750" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-1" value="Channels" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="30" y="360" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-2" value="Users" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="20" y="155" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-17" source="vgiXF06qbJuiWbsoq9dZ-18" target="vgiXF06qbJuiWbsoq9dZ-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-18" value="backend mottar en join request fra frontend" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="110" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-17" source="vgiXF06qbJuiWbsoq9dZ-20" target="vgiXF06qbJuiWbsoq9dZ-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-17" source="vgiXF06qbJuiWbsoq9dZ-20" target="vgiXF06qbJuiWbsoq9dZ-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-20" value="Er bruker en gyldig bruker?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="130" y="130" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-17" target="vgiXF06qbJuiWbsoq9dZ-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="205" as="sourcePoint" />
+            <mxPoint x="130" y="155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-23" value="send tilbake en bad request, bruker er ikke gyldig" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="330" y="175" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-17" source="vgiXF06qbJuiWbsoq9dZ-25" target="vgiXF06qbJuiWbsoq9dZ-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-25" value="er det en gyldig channel?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="117.5" y="310" width="175" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-17" target="vgiXF06qbJuiWbsoq9dZ-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="292.5" y="380" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-27" value="send tilbake en bad request, channel er ikke gyldig" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="342.5" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-17" source="vgiXF06qbJuiWbsoq9dZ-29" target="vgiXF06qbJuiWbsoq9dZ-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-29" value="sett opp relasjon mellom bruker og channel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="145" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-30" value="returner connection til channel til bruker" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="145" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vgiXF06qbJuiWbsoq9dZ-17" source="vgiXF06qbJuiWbsoq9dZ-31" target="vgiXF06qbJuiWbsoq9dZ-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-31" value="hent innn chattehistorikk fra channel." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vgiXF06qbJuiWbsoq9dZ-17">
+          <mxGeometry x="145" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vgiXF06qbJuiWbsoq9dZ-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vgiXF06qbJuiWbsoq9dZ-16" target="vgiXF06qbJuiWbsoq9dZ-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="rgKuOkWBvYDV3qbMfGa4" name="full flow leave channel">
+    <mxGraphModel dx="1426" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="HXMGeu5hIymuOnTI1UiC" name="full flow start channel">
+    <mxGraphModel dx="1426" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="OCd0CVTw-rYHxS6Hl_bP" name="full flow send message">
+    <mxGraphModel dx="1426" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="2De1whhGcd98VZfycgIz" name="tracke likes, flytte mest likt til star board">
+    <mxGraphModel dx="1426" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="uVF_nmRsOPjMo5J7D0l1" name="historikk-tracking med CRUD muligheter">
+    <mxGraphModel dx="1426" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="4cYBFyo_69pi0TS-4FOL" name="tracke-dislikes-block-hvis-man-har-mange">
+    <mxGraphModel dx="1426" dy="871" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
