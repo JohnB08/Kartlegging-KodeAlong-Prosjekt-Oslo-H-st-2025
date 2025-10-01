@@ -12,7 +12,7 @@ Vi snakket også kjapt om at back-enden kom til å bli skrevet i et annet progra
 
 Vi skriver vårt program i Jetbrains Rider.
 
-## Hva skrev vi i dag? (30.09.2025)
+## Hva skrev vi i går? (30.09.2025)
 Vårt ukesprosjekt er å sette opp en "simpel" livechat applikasjon, for å få et lite inblikk i hvordan utvilking fungerer. 
 
 Vi startet å skrive en applikasjon som skal fungere som en server for vår live-chat.
@@ -34,5 +34,29 @@ Hvis vi får ja på begge spørsmålene over, lar vi en bruker joine channelen d
 
 I dag har vi hovedsaklig fokusert på å sette opp det vi trenger for å stille disse spørsmålene om forespørselene våre på en god måte. 
 I morgen skal vi se at spørsmålene vi stiller fungerer som forventet, før Ask igjen kommer tilbake for å hjelpe oss med styling av siden vår, slik at vi klarer å matche siden på en god måte. 
+
+
+## Hva gjorde vi i dag? (01.10.2025)
+I dag nådde vi minstekravet for back-end delen av prosjektet.
+
+Vi fikset noen bugs vi hadde i går, hvor vi så vi hadde stilt feil spørsmål for å behandle forespørselet vi mottok. 
+I noen av spørsmålene vi stilte mot foresprøselen vi mottok, hadde vi sagt ja, der vi mente nei, og vise versa:
+
+I CreateChannel metoden vår på ChatHub hadde vi sagt at hvis brukeren vår eksisterte i vårt user repository, så var det en feil!
+```csharp
+if (userRepository.Contains(userName)) throw new HubException("User not found");
+```
+
+Vi fikset dette ved å si vi var ute etter det motsatte (vi la til et ! for å flippe vår ja/nei til å bety det motsatte).
+
+```csharp
+if (!userRepository.Contains(userName)) throw new HubException("User not found");
+```
+
+Vi implementerte også en måte for oss å få frem chatte historikken hvis en bruker joiner en allerede eksisterende kanal.
+
+Vi implementerte også en måte å presentere en oppdatert liste av tilgjengelige kanaler.
+
+Det som gjengstår for dagen er å starte arbeidet med Front-Enden.
 
 
