@@ -57,6 +57,13 @@ Vi implementerte også en måte for oss å få frem chatte historikken hvis en b
 
 Vi implementerte også en måte å presentere en oppdatert liste av tilgjengelige kanaler.
 
+Siden vi var litt i tidsklemmen og brukte kort tid på planlegging, ser vi at mye av småbugs dukker opp her og der. 
+Selv om det tar en stund, er det alltid lurt å sketche ut og planlegge hvordan programmet skal behandle forespørsler på, på en god måte.
+
+Vedlagt ligger også grovsketchen vi laget for å implementere chatte-historikk.
+
+![Grovskissen av vår chattehistorikkmodell skulle vært her](Hvordan%20implementere%20chattehistorikk.excalidraw.png)
+
 Det som gjengstår for dagen er å starte arbeidet med Front-Enden.
 
 
