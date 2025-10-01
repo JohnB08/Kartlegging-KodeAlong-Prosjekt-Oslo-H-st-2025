@@ -20,6 +20,23 @@ public class HubInformationController(UserRepository userRepository, ChannelRepo
     {
         return Ok(userChannelRelationshipRepository.GetUsersInChannel(channelName));
     }
+
+    [HttpPost("users/signup")]
+    public IActionResult PostNewUser(string userName)
+    {
+        return Ok(userRepository.SetUser(userName));
+    }
+
+    [HttpPost("users/logIn")]
+    public IActionResult LogIn(string userName)
+    {
+        if (userRepository.Contains(userName))
+        {
+            return Ok();
+        }
+
+        return Unauthorized();
+    }
     
     
 }

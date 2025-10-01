@@ -7,6 +7,7 @@ public class ChatHub(
     ChannelRepository channelRepository,
     UserRepository userRepository,
     UserChannelRelationshipRepository userChannelRelationshipRepository,
+    ChatHistoryRepository chatHistoryRepository,
     ILogger<ChatHub> logger
     ): Hub
 {
@@ -19,14 +20,24 @@ public class ChatHub(
         userChannelRelationshipRepository.AddUserChannelRelationship(userName, channelName);
         logger.LogInformation($"User {userName} has joined the channel {channelName}");
         await Groups.AddToGroupAsync(Context.ConnectionId, channelName);
+        var history = chatHistoryRepository.GetHistoryForChannel(channelName);
+        if (history.Count > 0)
+        {
+            for (var i = 0; i < history.Count; i++)
+            {
+                await Clients.Caller.SendAsync("ReceiveMessage", history[i].UserName, history[i].Content);
+            }
+        }
     }
 
     public async Task CreateChannel(string channelName, string userName)
     {
         if (channelRepository.Contains(channelName)) throw new HubException("Channel not found");
-        if (userRepository.Contains(userName)) throw new HubException("User not found");
+        if (!userRepository.Contains(userName)) throw new HubException("User not found");
         userChannelRelationshipRepository.AddUserChannelRelationship(userName, channelName);
         logger.LogInformation($"User {userName} has created the channel {channelName}");
+        channelRepository.SetChannel(channelName);
+        chatHistoryRepository.StartNewHistoryForChannel(channelName);
         await Groups.AddToGroupAsync(Context.ConnectionId, channelName);
     }
 
@@ -43,6 +54,13 @@ public class ChatHub(
     {
         if (!userChannelRelationshipRepository.ChannelContainsUser(channel, userName)) throw new HubException("User not found in channel");
         logger.LogInformation($"User {userName} has sent the message {message} to the channel {channel}");
-        await Clients.OthersInGroup(channel).SendAsync("ReceiveMessage", channel, userName, message);
+        var messageForHistory = new Message
+        {
+            UserName = userName,
+            Content = message,
+            SentAt = DateTime.UtcNow
+        };
+        chatHistoryRepository.AddHistoryToChannel(channel, messageForHistory);
+        await Clients.OthersInGroup(channel).SendAsync("ReceiveMessage", userName, message);
     }
 }

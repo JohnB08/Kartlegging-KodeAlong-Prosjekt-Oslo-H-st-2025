@@ -16,6 +16,8 @@ builder.Services.AddSingleton<UserRepository>();
 
 builder.Services.AddSingleton<UserChannelRelationshipRepository>();
 
+builder.Services.AddSingleton<ChatHistoryRepository>();
+
 builder.Services.AddLogging();
 
 builder.Services.AddSignalR();

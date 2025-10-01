@@ -5,11 +5,22 @@ const connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build(
 /* Vi setter også opp en referanse til channelName vi kan bruke, istedenfor å alltid lese html.*/
 let channelName = "";
 
+let activeChannels = await fetchChannelNames();
+
+setInterval(async ()=>{
+    activeChannels = await fetchChannelNames();
+    console.log(activeChannels);
+}, 10000)
+
+let hubError = null;
+
 /* siden vår js fil er en modul, og blir defer loaded, må vi hente inn,
 og sette eventlisteners etter html er loaded. */
 document.getElementById("joinBtn").addEventListener("click", joinChannel);
 document.getElementById("sendBtn").addEventListener("click", sendMessage);
 document.getElementById("createBtn").addEventListener("click", createChannel);
+document.getElementById("signUpBtn").addEventListener("click", signUp);
+document.getElementById("logInBtn").addEventListener("click", logIn);
 
 /* Her setter vi opp en lytter mot ReceiveMessage eventen vi tilgjengeliggjør i hubben vår. */
 connection.on("ReceiveMessage", (user, message) => {
@@ -20,27 +31,75 @@ connection.on("ReceiveMessage", (user, message) => {
 async function joinChannel() {
     const channel = document.getElementById("channel").value;
     const username = document.getElementById("user").value;
-    if (channelName !== "")
-    {
-        await connection.invoke("LeaveChannel", channel, username);
+    if (channelName !== ""&& !hubError) {
+        await connection.invoke("LeaveChannel", channelName, username);
+        hubError = null;
     }
     channelName = channel;
-    await connection.invoke("JoinChannel", channel, username);
+    try {
+        await connection.invoke("JoinChannel", channel, username);
+        document.getElementById("channelOutput").textContent = channelName;
+        hubError = null;
+    } catch (err) {
+        hubError = err;
+    }
     /* Vi legger også channelnavnet inn i channelOutput*/
-    document.getElementById("channelOutput").textContent = channelName;
+}
+
+async function fetchChannelNames(){
+    const response = await fetch("api/HubInformation/channels");
+    return await response.json();
 }
 
 async function createChannel(){
     const channel = document.getElementById("channel").value;
     const username = document.getElementById("user").value;
-    if (channelName !== "")
+    if (channelName !== "" && !hubError)
     {
-        await connection.invoke("LeaveChannel", channel, username);
+        await connection.invoke("LeaveChannel", channelName, username);
+        hubError = null;
     }
     channelName = channel;
-    await connection.invoke("CreateChannel", channel, username);
+    try{
+        await connection.invoke("CreateChannel", channel, username);
+        document.getElementById("channelOutput").textContent = channelName;
+        hubError = null;
+    } catch (err) {
+        hubError = err;
+    }
     /* Vi legger også channelnavnet inn i channelOutput*/
-    document.getElementById("channelOutput").textContent = channelName;
+}
+
+async function logIn()
+{
+    const userName = document.getElementById("user").value;
+    if (userName === "" || userName === null || userName === undefined || userName.trim().length === 0){
+        return;
+    }
+    const requestOptions = {
+        method: "POST",
+    }
+    const response = await fetch(`api/HubInformation/users/logIn?userName=${userName}`, requestOptions)
+    if (response.ok){
+        document.getElementById("user").disabled = true;
+        document.getElementById("logInBtn").disabled = true;
+    }
+}
+
+async function signUp()
+{
+    const userName = document.getElementById("user").value;
+    if (userName === "" || userName === null || userName === undefined || userName.trim().length === 0){
+        return;
+    }
+    const requestOptions = {
+        method: "POST",
+    }
+    const response = await fetch(`api/HubInformation/users/signup?userName=${userName}`, requestOptions)
+    if (response.ok){
+        document.getElementById("user").disabled = true;
+        document.getElementById("signUpBtn").disabled = true;
+    }
 }
 
 /* Dette er en hjelpefunksjon som printer en melding til message listen vår.*/
