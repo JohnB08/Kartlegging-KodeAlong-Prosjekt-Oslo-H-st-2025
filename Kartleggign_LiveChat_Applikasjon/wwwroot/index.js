@@ -7,14 +7,13 @@ const connection = new signalR.HubConnectionBuilder()
 let channelName = "";
 
 let activeChannels = await fetchChannelNames();
-
 setInterval(async () => {
-  var channelNameList = document.getElementById("channelNames");
-  var newList = document.createElement("ul");
+  const channelNameList = document.getElementById("channelNames");
+  const newList = document.createElement("ul");
   newList.id = "channelNames";
   activeChannels = await fetchChannelNames();
   activeChannels.forEach((channel) => {
-    var li = document.createElement("li");
+    const li = document.createElement("li");
     li.textContent = channel;
     newList.appendChild(li);
   });
@@ -56,7 +55,7 @@ async function joinChannel() {
   channelName = channel;
   try {
     document.getElementById("channelOutput").textContent = channelName;
-    var list = document.getElementById("messageList");
+    const list = document.getElementById("messageList");
     console.log(list);
     list.childNodes.forEach((child) => child.remove());
     await connection.invoke("JoinChannel", channel, username);
@@ -82,7 +81,7 @@ async function createChannel() {
   channelName = channel;
   try {
     document.getElementById("channelOutput").textContent = channelName;
-    var list = document.getElementById("messageList");
+    const list = document.getElementById("messageList");
     list.childNodes.forEach((child) => child.remove());
     await connection.invoke("CreateChannel", channel, username);
     hubError = null;
