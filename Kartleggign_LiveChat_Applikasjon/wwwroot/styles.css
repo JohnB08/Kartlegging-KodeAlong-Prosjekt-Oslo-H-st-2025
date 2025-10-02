@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --neutral: #03071e;
+  --main-color: #6a0405;
+  --main-accent: #dc2f02;
+  --secondary-color: #f48c06;
+  --secondary-accent: #ffba08;
+}
+
+main {
+  display: grid;
+  height: 100vh;
+  background: var(--main-color);
+  grid-template-columns: 1fr 3fr;
+}
+
+.chat-area {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(106, 4, 5, 1) 0%,
+    rgba(220, 47, 2, 1) 100%
+  );
+}
+
+.chat-container {
+  overflow: scroll;
+  align-self: flex-start;
+  overflow-x: auto;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 4rem;
+  scrollbar-width: none;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.message-list > * {
+  text-align: start;
+  padding: 0.4rem;
+}
+
+.message-label {
+  display: none;
+}
+
+.message-container {
+  width: 40rem;
+  height: 5rem;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 2rem;
+  border: none;
+}
+
+.message-container:focus {
+  box-shadow: 20px 20px var(--neutral);
+}
+
+.message-input-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.message-input {
+  margin-bottom: 2rem;
+}
+
+button {
+  width: 7rem;
+  height: 3rem;
+  border-radius: 25px;
+  background: var(--neutral);
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  background: #fff;
+  color: var(--neutral);
+}
+
+li {
+  width: 40rem;
+  min-height: 3rem;
+  background: var(--secondary-accent);
+  list-style: none;
+  border-radius: 30px;
+  font-size: 3rem;
+}
+
+.user-message {
+  align-self: flex-end;
+  background: var(--secondary-color);
+}
+
+/* Styling for sidebar starter her */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  color: #fff;
+  background: linear-gradient(
+    180deg,
+    rgba(106, 4, 5, 1) 0%,
+    rgba(220, 47, 2, 1) 100%
+  );
+}
+
+.channel-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.channel-input,
+.user-input {
+  width: 80%;
+  height: 2rem;
+  border-radius: 25px;
+  border: none;
+  text-align: center;
+}
+
+.channel-section button {
+  width: 6rem;
+  height: 2rem;
+  border-radius: 40px;
+  border: none;
+}
+
+.channel-section > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.user-section {
+  order: -1;
+}
+
+.channel-list {
+  display: flex;
+  flex-direction: column;
+  font-size: 55px;
+  text-align: center;
+}
+
+p {
+  text-wrap: nowrap;
+}
+
+.joined-channel {
+  height: 10rem;
+}
+
+.channel-area {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.channel-area * {
+  width: 100%;
+}
