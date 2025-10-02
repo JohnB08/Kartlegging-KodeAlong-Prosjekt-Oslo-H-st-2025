@@ -36,7 +36,7 @@ I dag har vi hovedsaklig fokusert på å sette opp det vi trenger for å stille 
 I morgen skal vi se at spørsmålene vi stiller fungerer som forventet, før Ask igjen kommer tilbake for å hjelpe oss med styling av siden vår, slik at vi klarer å matche siden på en god måte. 
 
 
-## Hva gjorde vi i dag? (01.10.2025)
+## Hva gjorde vi i går? (01.10.2025)
 I dag nådde vi minstekravet for back-end delen av prosjektet.
 
 Vi fikset noen bugs vi hadde i går, hvor vi så vi hadde stilt feil spørsmål for å behandle forespørselet vi mottok. 
@@ -66,4 +66,15 @@ Vedlagt ligger også grovsketchen vi laget for å implementere chatte-historikk.
 
 Det som gjengstår for dagen er å starte arbeidet med Front-Enden.
 
+## Hva gjorde vi i dag? (02.10.2025)
+I dag ferdigstilte vi front-end designet vårt, samtidig som vi oppdagde mange bugs i koden vår.
 
+Vi brukte litt tid å fikse opp, og ordne opp i disse i Javascript koden vår. 
+Etter vi hadde en enkel side som vi trodde ville fungere valgte vi å hoste den live, slik at andre kan teste den. 
+
+Vi hostet den på en platform som heter Microsoft Azure. Her brukte vi deres Platform As A Service (PaaS) løsning som heter App Service, for å lage en Web App som kjører og tilgjengeliggjør prosjektet vårt for resten av internettet. 
+
+Etter vi eksponerte siden for mange brukere samtidig, fant vi enda flere bugs! Men sånn er apputvikling!
+
+Siden er live via denne linken:
+[Vår Live-chat applikasjon](https://kartlegging-livechat-applikasjon-2025-f5cdguauamf8eqh2.norwayeast-01.azurewebsites.net/)
