@@ -5,6 +5,7 @@ const connection = new signalR.HubConnectionBuilder()
 
 /* Vi setter også opp en referanse til channelName vi kan bruke, istedenfor å alltid lese html.*/
 let channelName = "";
+let loggedIn = false;
 
 let activeChannels = await fetchChannelNames();
 setInterval(async () => {
@@ -15,6 +16,7 @@ setInterval(async () => {
   activeChannels.forEach((channel) => {
     const li = document.createElement("li");
     li.textContent = channel;
+    li.classList.add("activeChannel");
     newList.appendChild(li);
   });
   const channelNameArea = document.getElementById("channelList");
@@ -34,6 +36,8 @@ document.getElementById("sendBtn").addEventListener("click", sendMessage);
 document.getElementById("createBtn").addEventListener("click", createChannel);
 document.getElementById("signUpBtn").addEventListener("click", signUp);
 document.getElementById("logInBtn").addEventListener("click", logIn);
+document.getElementById("logOutBtn").addEventListener("click", logOut);
+
 
 /* Her setter vi opp en lytter mot ReceiveMessage eventen vi tilgjengeliggjør i hubben vår. */
 connection.on("ReceiveMessage", (user, message) => {
@@ -54,11 +58,11 @@ async function joinChannel() {
   }
   channelName = channel;
   try {
-    document.getElementById("channelOutput").textContent = channelName;
     const list = document.getElementById("messageList");
     console.log(list);
     list.childNodes.forEach((child) => child.remove());
     await connection.invoke("JoinChannel", channel, username);
+    document.getElementById("channelOutput").textContent = channelName;
     hubError = null;
   } catch (err) {
     hubError = err;
@@ -80,10 +84,10 @@ async function createChannel() {
   }
   channelName = channel;
   try {
-    document.getElementById("channelOutput").textContent = channelName;
     const list = document.getElementById("messageList");
     list.childNodes.forEach((child) => child.remove());
     await connection.invoke("CreateChannel", channel, username);
+    document.getElementById("channelOutput").textContent = channelName;
     hubError = null;
   } catch (err) {
     hubError = err;
@@ -101,16 +105,29 @@ async function logIn() {
   ) {
     return;
   }
+  const password = document.getElementById("password").value;
+  if (
+      password === "" ||
+      password === null ||
+      password === undefined ||
+      userName.trim().length === 0
+  ) return;
   const requestOptions = {
     method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({userName: userName, password: password}),
   };
   const response = await fetch(
-    `api/HubInformation/users/logIn?userName=${userName}`,
+    `api/HubInformation/users/logIn`,
     requestOptions
   );
+  console.log(response);
   if (response.ok) {
     document.getElementById("user").disabled = true;
+    document.getElementById("password").disabled = true;
+    document.getElementById("signUpBtn").disabled = true;
     document.getElementById("logInBtn").disabled = true;
+    loggedIn = true;
   }
 }
 
@@ -124,17 +141,59 @@ async function signUp() {
   ) {
     return;
   }
-  const requestOptions = {
-    method: "POST",
-  };
+    const password = document.getElementById("password").value;
+    if (
+        password === "" ||
+        password === null ||
+        password === undefined ||
+        userName.trim().length === 0
+    ) return;
+    const requestOptions = {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({userName: userName, password: password}),
+    };
   const response = await fetch(
-    `api/HubInformation/users/signup?userName=${userName}`,
+    `api/HubInformation/users/signUp`,
     requestOptions
   );
+  console.log(response);
   if (response.ok) {
     document.getElementById("user").disabled = true;
+    document.getElementById("password").disabled = true;
     document.getElementById("signUpBtn").disabled = true;
+    document.getElementById("logInBtn").disabled = true;
+    loggedIn = true;
   }
+}
+
+async function logOut() {
+    const userName = document.getElementById("user").value;
+    if (
+        userName === "" ||
+        userName === null ||
+        userName === undefined ||
+        userName.trim().length === 0
+    ) {
+        return;
+    }
+    const requestOptions = {
+        method: "POST",
+    };
+    const response = await fetch(
+        `api/HubInformation/users/signup/${userName}`,
+        requestOptions
+    );
+    
+    if (response.ok) {
+        document.getElementById("user").disabled = false;
+        document.getElementById("password").disabled = false;
+        document.getElementById("user").textContent = "";
+        document.getElementById("password").textContent = "";
+        document.getElementById("signUpBtn").disabled = false;
+        document.getElementById("logInBtn").disabled = false;
+        loggedIn = false;
+    }
 }
 
 /* Dette er en hjelpefunksjon som printer en melding til message listen vår.*/
@@ -147,6 +206,7 @@ function printMessage(user, message, className) {
 
 /* Dette er en asynkron funksjon som sender en melding til vår chathub, ved å invoke SendMessageToChannel metoden i vår chathub.*/
 async function sendMessage() {
+    if (!loggedIn) return;
   if (
     channelName === "" ||
     channelName === null ||

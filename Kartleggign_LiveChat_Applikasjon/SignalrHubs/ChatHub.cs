@@ -16,7 +16,7 @@ public class ChatHub(
     public async Task JoinChannel(string channelName, string userName)
     {
         if (!channelRepository.Contains(channelName)) throw new HubException("Channel not found");
-        if (!userRepository.Contains(userName)) throw new HubException("User not found");
+        if (!userRepository.CheckUserLoggedIn(userName)) throw new HubException("User not found");
         userChannelRelationshipRepository.AddUserChannelRelationship(userName, channelName);
         logger.LogInformation($"User {userName} has joined the channel {channelName}");
         await Groups.AddToGroupAsync(Context.ConnectionId, channelName);
@@ -33,7 +33,7 @@ public class ChatHub(
     public async Task CreateChannel(string channelName, string userName)
     {
         if (channelRepository.Contains(channelName)) throw new HubException("Channel not found");
-        if (!userRepository.Contains(userName)) throw new HubException("User not found");
+        if (!userRepository.CheckUserLoggedIn(userName)) throw new HubException("User not found");
         userChannelRelationshipRepository.AddUserChannelRelationship(userName, channelName);
         logger.LogInformation($"User {userName} has created the channel {channelName}");
         channelRepository.SetChannel(channelName);
@@ -43,7 +43,7 @@ public class ChatHub(
 
     public async Task LeaveChannel(string channelName, string userName)
     {
-        if (!userRepository.Contains(userName)) throw new HubException("User not found");
+        if (!userRepository.CheckUserLoggedIn(userName)) throw new HubException("User not found");
         if (!userChannelRelationshipRepository.ChannelContainsUser(channelName, userName)) throw new HubException("Channel not found");
         userChannelRelationshipRepository.RemoveUserChannelRelationship(userName, channelName);
         logger.LogInformation($"User {userName} has left the channel {channelName}");

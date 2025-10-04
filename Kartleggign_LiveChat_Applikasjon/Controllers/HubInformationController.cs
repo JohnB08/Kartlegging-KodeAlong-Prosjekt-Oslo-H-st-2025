@@ -21,21 +21,43 @@ public class HubInformationController(UserRepository userRepository, ChannelRepo
         return Ok(userChannelRelationshipRepository.GetUsersInChannel(channelName));
     }
 
-    [HttpPost("users/signup")]
-    public IActionResult PostNewUser(string userName)
+    [HttpPost("users/signUp")]
+    public IActionResult PostNewUser([FromBody] UserDto user)
     {
-        return Ok(userRepository.SetUser(userName));
+        try
+        {
+            return Ok(userRepository.SetUser(user.userName, user.password));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e);
+        }
     }
 
     [HttpPost("users/logIn")]
-    public IActionResult LogIn(string userName)
+    public IActionResult LogIn([FromBody]UserDto user)
     {
-        if (userRepository.Contains(userName))
+        try
         {
+            userRepository.LogIn(user.userName, user.password);
+            return Ok();
+        } catch (Exception ex) {return Unauthorized(ex);}
+    }
+
+    [HttpPost("users/logOut/{userName}")]
+    public IActionResult LogOut(string userName)
+    {
+        try
+        {
+            if (!userRepository.CheckUserLoggedIn(userName)) return NotFound();
+            userRepository.LogOut(userName);
             return Ok();
         }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
 
-        return Unauthorized();
     }
     
     
