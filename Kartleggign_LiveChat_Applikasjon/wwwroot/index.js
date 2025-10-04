@@ -59,13 +59,13 @@ async function joinChannel() {
   channelName = channel;
   try {
     const list = document.getElementById("messageList");
-    console.log(list);
     list.childNodes.forEach((child) => child.remove());
     await connection.invoke("JoinChannel", channel, username);
     document.getElementById("channelOutput").textContent = channelName;
     hubError = null;
   } catch (err) {
     hubError = err;
+    printMessage("System", err.message, "error");
   }
   /* Vi legger også channelnavnet inn i channelOutput*/
 }
@@ -91,6 +91,7 @@ async function createChannel() {
     hubError = null;
   } catch (err) {
     hubError = err;
+    printMessage("System", err.message, "error");
   }
   /* Vi legger også channelnavnet inn i channelOutput*/
 }
@@ -117,18 +118,26 @@ async function logIn() {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({userName: userName, password: password}),
   };
-  const response = await fetch(
-    `api/HubInformation/users/logIn`,
-    requestOptions
-  );
-  console.log(response);
-  if (response.ok) {
-    document.getElementById("user").disabled = true;
-    document.getElementById("password").disabled = true;
-    document.getElementById("signUpBtn").disabled = true;
-    document.getElementById("logInBtn").disabled = true;
-    loggedIn = true;
-  }
+    try{
+        const response = await fetch(
+            `api/HubInformation/users/logIn`,
+            requestOptions
+        );
+        console.log(response);
+        if (response.ok) {
+            document.getElementById("user").disabled = true;
+            document.getElementById("password").disabled = true;
+            document.getElementById("signUpBtn").disabled = true;
+            document.getElementById("logInBtn").disabled = true;
+            loggedIn = true;
+        }
+        else{
+            const error = await response.json();
+            printMessage("System", error.message, "error");
+        }
+    } catch (e) {
+        printMessage("System", e.message, "error");
+    }
 }
 
 async function signUp() {
@@ -153,17 +162,24 @@ async function signUp() {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({userName: userName, password: password}),
     };
-  const response = await fetch(
-    `api/HubInformation/users/signUp`,
-    requestOptions
-  );
-  console.log(response);
-  if (response.ok) {
-    document.getElementById("user").disabled = true;
-    document.getElementById("password").disabled = true;
-    document.getElementById("signUpBtn").disabled = true;
-    document.getElementById("logInBtn").disabled = true;
-    loggedIn = true;
+  try {
+      const response = await fetch(
+          `api/HubInformation/users/signUp`,
+          requestOptions
+      );
+      if (response.ok) {
+          document.getElementById("user").disabled = true;
+          document.getElementById("password").disabled = true;
+          document.getElementById("signUpBtn").disabled = true;
+          document.getElementById("logInBtn").disabled = true;
+          loggedIn = true;
+      }
+      else{
+          const error = await response.json();
+          printMessage("System", error.message, "error");
+      }
+  } catch (err) {
+      printMessage("System", err.message, "error");
   }
 }
 
@@ -180,19 +196,27 @@ async function logOut() {
     const requestOptions = {
         method: "POST",
     };
-    const response = await fetch(
-        `api/HubInformation/users/signup/${userName}`,
-        requestOptions
-    );
-    
-    if (response.ok) {
-        document.getElementById("user").disabled = false;
-        document.getElementById("password").disabled = false;
-        document.getElementById("user").textContent = "";
-        document.getElementById("password").textContent = "";
-        document.getElementById("signUpBtn").disabled = false;
-        document.getElementById("logInBtn").disabled = false;
-        loggedIn = false;
+    try{
+        const response = await fetch(
+            `api/HubInformation/users/logOut/${userName}`,
+            requestOptions
+        );
+
+        if (response.ok) {
+            document.getElementById("user").disabled = false;
+            document.getElementById("password").disabled = false;
+            document.getElementById("user").textContent = "";
+            document.getElementById("password").textContent = "";
+            document.getElementById("signUpBtn").disabled = false;
+            document.getElementById("logInBtn").disabled = false;
+            loggedIn = false;
+        }
+        else{
+            const error = await response.json();
+            printMessage("System", error.message, "error");
+        }
+    } catch (e) {
+        printMessage("System", e.message, "error");
     }
 }
 

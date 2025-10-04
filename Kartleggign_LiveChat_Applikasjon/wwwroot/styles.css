@@ -133,6 +133,9 @@ li {
     rgba(220, 47, 2, 1) 100%
   );
 }
+.error {
+    color: var(--main-accent);
+}
 
 .channel-section {
   display: flex;

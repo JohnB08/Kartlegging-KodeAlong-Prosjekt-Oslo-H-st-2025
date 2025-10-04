@@ -30,7 +30,9 @@ public class HubInformationController(UserRepository userRepository, ChannelRepo
         }
         catch (Exception e)
         {
-            return BadRequest(e);
+            return BadRequest(new {
+                message = e.Message
+            });
         }
     }
 
@@ -41,7 +43,10 @@ public class HubInformationController(UserRepository userRepository, ChannelRepo
         {
             userRepository.LogIn(user.userName, user.password);
             return Ok();
-        } catch (Exception ex) {return Unauthorized(ex);}
+        } catch (Exception ex)
+        {
+            return Unauthorized(new { message = ex.Message }
+        );}
     }
 
     [HttpPost("users/logOut/{userName}")]
@@ -55,7 +60,9 @@ public class HubInformationController(UserRepository userRepository, ChannelRepo
         }
         catch (Exception e)
         {
-            return BadRequest(e.Message);
+            return BadRequest(new {
+               message = e.Message
+            });
         }
 
     }
