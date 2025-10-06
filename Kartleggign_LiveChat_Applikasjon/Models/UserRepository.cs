@@ -29,7 +29,13 @@ public class UserRepository
         _users.Add(user with {Online = true});
     }
 
-    public void LogOut(string userName) => _users.RemoveAll(u => u.Online && u.NickName.Equals(userName, StringComparison.OrdinalIgnoreCase));
+    public void LogOut(string userName)
+    {
+        var user =  _users.FirstOrDefault(u => u.NickName == userName);
+        if (user is null) throw new Exception("User not found");
+        _users.Remove(user);
+        _users.Add(user with {Online = false});
+    }
 
     public IEnumerable<User> LoggedInUsers() => _users.Where(u => u.Online);
     
